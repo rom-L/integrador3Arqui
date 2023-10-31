@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface EstudianteRepository extends JpaRepository<Estudiante, Long> {
-    List<Estudiante> findAllByOrderBydniDesc();
-    Estudiante findBynumeroLibreta(String numeroLibreta);
+    List<Estudiante> findAllByOrderByDniDesc();
+    Estudiante findByNumeroLibreta(String numeroLibreta);
+    List<Estudiante> findByGenero(String genero);
 }

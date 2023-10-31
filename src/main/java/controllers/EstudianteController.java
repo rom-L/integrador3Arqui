@@ -17,12 +17,17 @@ public class EstudianteController {
 
     @GetMapping("/OrderByDNI")
     public List<EstudianteDTO> getAllOrderByDni() {
-        return this.estudianteService.findAllByOrderBydniDesc();
+        return this.estudianteService.findAllByOrderByDniDesc();
     }
 
     @GetMapping("/nroLibreta/{nroLibreta}")
     public EstudianteDTO getBynumeroLibreta(@PathVariable String nroLibreta) {
-        return this.estudianteService.findBynumeroLibreta(nroLibreta);
+        return this.estudianteService.findByNumeroLibreta(nroLibreta);
+    }
+
+    @GetMapping("/genero/{genero}")
+    public List<EstudianteDTO> getBygenero(@PathVariable String genero) {
+        return this.estudianteService.findByGenero(genero);
     }
 
     @PostMapping("")
