@@ -17,7 +17,7 @@ public class EstudianteController {
 
     @GetMapping("")
     public List<EstudianteDTO> getAll() {
-        return this.estudianteService.findAll();
+        return this.estudianteService.findAllByOrderBydniDesc();
     }
 
     @GetMapping("/{id}")

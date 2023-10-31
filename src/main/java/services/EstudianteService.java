@@ -15,8 +15,8 @@ public class EstudianteService {
     private EstudianteRepository estudianteRepository;
 
 
-    public List<EstudianteDTO> findAll() {
-        List<Estudiante> resultado = this.estudianteRepository.findAll();   //resultado de la query
+    public List<EstudianteDTO> findAllByOrderBydniDesc() {  //BUSCA A TODOS ORDENADO POR DNI DESC
+        List<Estudiante> resultado = this.estudianteRepository.findAllByOrderBydniDesc();   //resultado de la query
         List<EstudianteDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
 
         for (Estudiante estudiante : resultado) {
