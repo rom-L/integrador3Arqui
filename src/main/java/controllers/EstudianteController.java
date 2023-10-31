@@ -15,12 +15,12 @@ public class EstudianteController {
     private EstudianteService estudianteService;
 
 
-    @GetMapping("")
-    public List<EstudianteDTO> getAll() {
+    @GetMapping("/OrderByDNI")
+    public List<EstudianteDTO> getAllOrderByDni() {
         return this.estudianteService.findAllByOrderBydniDesc();
     }
 
-    @GetMapping("/{nroLibreta}")
+    @GetMapping("/nroLibreta/{nroLibreta}")
     public EstudianteDTO getBynumeroLibreta(@PathVariable String nroLibreta) {
         return this.estudianteService.findBynumeroLibreta(nroLibreta);
     }

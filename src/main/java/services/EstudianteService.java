@@ -40,7 +40,7 @@ public class EstudianteService {
                 estudianteResultado.getCiudadResidencia(), estudianteResultado.getNumeroLibreta());
     }
 
-    public EstudianteDTO save(Estudiante estudiante) {
+    public EstudianteDTO save(Estudiante estudiante) {   /**INSERTA UN ESTUDIANTE**/
         Estudiante estudianteGuardado = this.estudianteRepository.save(estudiante);
 
         //retorna un EstudianteDTO copiando los atributos del estudiante guardado
