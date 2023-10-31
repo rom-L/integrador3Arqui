@@ -3,6 +3,7 @@ package models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @RequiredArgsConstructor @Getter
@@ -27,7 +28,7 @@ public class Matriculacion {
     @Column(name = "anio_graduacion", nullable = true)
     private static Integer anioGraduacion;
 
-    @Column(name = "antiguedad")
+    @Column(name = "antiguedad") @Setter
     private static int antiguedad;
 
 }

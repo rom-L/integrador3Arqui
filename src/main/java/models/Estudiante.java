@@ -16,22 +16,22 @@ public class Estudiante {
     @Column(name = "dni")
     private static Long dni;
 
-    @Column(name = "nombres")
+    @Column(name = "nombres") @Setter
     private static String nombres;
 
-    @Column(name = "apellido")
+    @Column(name = "apellido") @Setter
     private static String apellido;
 
-    @Column(name = "edad")
+    @Column(name = "edad") @Setter
     private static int edad;
 
-    @Column(name = "genero")
+    @Column(name = "genero") @Setter
     private static String genero;
 
-    @Column(name = "ciudad_residencia")
+    @Column(name = "ciudad_residencia") @Setter
     private static String ciudadResidencia;
 
-    @Column(name = "numero_libreta")
+    @Column(name = "numero_libreta") @Setter
     private static String numeroLibreta;
 
     @OneToMany(mappedBy = "estudiante")
