@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@RequiredArgsConstructor @Getter
+@Getter
 @Table(name = "matriculaciones")
 public class Matriculacion {
 
@@ -16,20 +16,28 @@ public class Matriculacion {
 
     @ManyToOne
     @JoinColumn(name = "estudiante_dni")
-    private static Estudiante estudiante;
+    private Estudiante estudiante;
 
     @ManyToOne
     @JoinColumn(name = "carrera_id")
-    private static Carrera carrera;
+    private Carrera carrera;
 
     @Column(name = "anio_inscripcion")
-    private static int anioInscripcion;
+    private Integer anioInscripcion;
 
     @Column(name = "anio_graduacion", nullable = true)
-    private static Integer anioGraduacion;
+    private Integer anioGraduacion;
 
     @Column(name = "antiguedad") @Setter
-    private static int antiguedad;
+    private Integer antiguedad;
+
+    public Matriculacion(Estudiante estudiante, Carrera carrera, Integer anioInscripcion, Integer anioGraduacion, Integer antiguedad) {
+        this.estudiante = estudiante;
+        this.carrera = carrera;
+        this.anioInscripcion = anioInscripcion;
+        this.anioGraduacion = anioGraduacion;
+        this.antiguedad = antiguedad;
+    }
 
 }
 

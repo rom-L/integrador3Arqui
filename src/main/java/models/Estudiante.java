@@ -6,37 +6,48 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@RequiredArgsConstructor @Getter
+@Getter
 @Table(name = "estudiantes")
 public class Estudiante {
     @Id
     @Column(name = "dni")
-    private static Long dni;
+    private Long dni;
 
     @Column(name = "nombres") @Setter
-    private static String nombres;
+    private String nombres;
 
     @Column(name = "apellido") @Setter
-    private static String apellido;
+    private String apellido;
 
     @Column(name = "edad") @Setter
-    private static int edad;
+    private int edad;
 
     @Column(name = "genero") @Setter
-    private static String genero;
+    private String genero;
 
     @Column(name = "ciudad_residencia") @Setter
-    private static String ciudadResidencia;
+    private String ciudadResidencia;
 
     @Column(name = "numero_libreta") @Setter
-    private static String numeroLibreta;
+    private String numeroLibreta;
 
     @OneToMany(mappedBy = "estudiante")
     private Set<Matriculacion> matriculaciones;
 
+    public Estudiante(Long dni, String nombres, String apellido, int edad, String genero, String ciudadResidencia, String numeroLibreta) {
+        this.dni = dni;
+        this.nombres = nombres;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.genero = genero;
+        this.ciudadResidencia = ciudadResidencia;
+        this.numeroLibreta = numeroLibreta;
+        this.matriculaciones = new HashSet<Matriculacion>();
+    }
 
     public void addMatriculacion(Matriculacion matriculacion) {
         this.matriculaciones.add(matriculacion);
