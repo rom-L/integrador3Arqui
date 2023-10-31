@@ -20,7 +20,7 @@ public class EstudianteController {
         return this.estudianteService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public EstudianteDTO getById(@PathVariable Long id) {
         return this.estudianteService.findById(id);
     }
