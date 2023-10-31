@@ -20,9 +20,9 @@ public class EstudianteController {
         return this.estudianteService.findAllByOrderBydniDesc();
     }
 
-    @GetMapping("/{id}")
-    public EstudianteDTO getById(@PathVariable Long id) {
-        return this.estudianteService.findById(id);
+    @GetMapping("/{nroLibreta}")
+    public EstudianteDTO getBynumeroLibreta(@PathVariable String nroLibreta) {
+        return this.estudianteService.findBynumeroLibreta(nroLibreta);
     }
 
     @PostMapping("")

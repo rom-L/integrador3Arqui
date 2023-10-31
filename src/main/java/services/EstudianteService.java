@@ -15,7 +15,7 @@ public class EstudianteService {
     private EstudianteRepository estudianteRepository;
 
 
-    public List<EstudianteDTO> findAllByOrderBydniDesc() {  //BUSCA A TODOS ORDENADO POR DNI DESC
+    public List<EstudianteDTO> findAllByOrderBydniDesc() {      /**BUSCA A TODOS ORDENADO POR DNI DESC**/
         List<Estudiante> resultado = this.estudianteRepository.findAllByOrderBydniDesc();   //resultado de la query
         List<EstudianteDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
 
@@ -31,8 +31,8 @@ public class EstudianteService {
         return listaNueva;  //retorna la lista de DTOs
     }
 
-    public EstudianteDTO findById(Long id) {
-        Estudiante estudianteResultado = this.estudianteRepository.findById(id).get();   //se usa el .get() para conseguir el Estudiante del Optional
+    public EstudianteDTO findBynumeroLibreta(String numeroLibreta) {
+        Estudiante estudianteResultado = this.estudianteRepository.findBynumeroLibreta(numeroLibreta);   //se usa el .get() para conseguir el Estudiante del Optional
 
         //retorna un EstudianteDTO copiando los atributos del estudiante resultado
         return new EstudianteDTO(estudianteResultado.getDni(), estudianteResultado.getNombres(),
