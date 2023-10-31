@@ -31,7 +31,7 @@ public class EstudianteService {
         return listaNueva;  //retorna la lista de DTOs
     }
 
-    public EstudianteDTO findBynumeroLibreta(String numeroLibreta) {
+    public EstudianteDTO findBynumeroLibreta(String numeroLibreta) {    /**BUSCA POR NUMERO LIBRETA**/
         Estudiante estudianteResultado = this.estudianteRepository.findBynumeroLibreta(numeroLibreta);   //se usa el .get() para conseguir el Estudiante del Optional
 
         //retorna un EstudianteDTO copiando los atributos del estudiante resultado
