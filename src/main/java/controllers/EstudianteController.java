@@ -11,26 +11,23 @@ import java.util.List;
 @RestController
 @RequestMapping("/estudiantes")
 public class EstudianteController {
-    @RestController
-    @RequestMapping("/estudiantes")
-    public class EstudianteController {
-        @Autowired
-        private EstudianteService estudianteService;
+    @Autowired
+    private EstudianteService estudianteService;
 
 
-        @GetMapping("")
-        public List<EstudianteDTO> getAll() {
-            return this.estudianteService.findAll();
-        }
+    @GetMapping("")
+    public List<EstudianteDTO> getAll() {
+        return this.estudianteService.findAll();
+    }
 
-        @GetMapping("{id}")
-        public EstudianteDTO getById(@PathVariable Long id) {
-            return this.estudianteService.findById(id);
-        }
+    @GetMapping("{id}")
+    public EstudianteDTO getById(@PathVariable Long id) {
+        return this.estudianteService.findById(id);
+    }
 
-        @PostMapping("")
-        public EstudianteDTO post(@RequestBody Estudiante estudiante) {
-            return this.estudianteService.save(estudiante);
-        }
+    @PostMapping("")
+    public EstudianteDTO post(@RequestBody Estudiante estudiante) {
+        return this.estudianteService.save(estudiante);
     }
 }
+
