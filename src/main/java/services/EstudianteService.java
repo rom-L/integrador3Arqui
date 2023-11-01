@@ -15,7 +15,9 @@ public class EstudianteService {
     private EstudianteRepository estudianteRepository;
 
 
-    public List<EstudianteDTO> findAllByOrderByDniDesc() {      /**BUSCA A TODOS ORDENADO POR DNI DESC**/
+
+    /**BUSCA A TODOS ORDENADO POR DNI DESC | (2.C)**/
+    public List<EstudianteDTO> findAllByOrderByDniDesc() {
         List<Estudiante> resultado = this.estudianteRepository.findAllByOrderByDniDesc();   //resultado de la query
         List<EstudianteDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
 
@@ -31,7 +33,9 @@ public class EstudianteService {
         return listaNueva;  //retorna la lista de DTOs
     }
 
-    public EstudianteDTO findByNumeroLibreta(String numeroLibreta) {    /**BUSCA POR NUMERO LIBRETA**/
+
+    /**BUSCA POR NUMERO LIBRETA | (2.D)**/
+    public EstudianteDTO findByNumeroLibreta(String numeroLibreta) {
         Estudiante estudianteResultado = this.estudianteRepository.findByNumeroLibreta(numeroLibreta).get();   //se usa el .get() para conseguir el Estudiante del Optional
 
         //retorna un EstudianteDTO copiando los atributos del estudiante resultado
@@ -40,7 +44,9 @@ public class EstudianteService {
                 estudianteResultado.getCiudadResidencia(), estudianteResultado.getNumeroLibreta());
     }
 
-    public List<EstudianteDTO> findByGenero(String genero) {      /**BUSCA POR GENERO**/
+
+    /**BUSCA POR GENERO | (2.E)**/
+    public List<EstudianteDTO> findByGenero(String genero) {
         List<Estudiante> resultado = this.estudianteRepository.findByGenero(genero);   //resultado de la query
         List<EstudianteDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
 
@@ -56,7 +62,9 @@ public class EstudianteService {
         return listaNueva;  //retorna la lista de DTOs
     }
 
-    public EstudianteDTO save(Estudiante estudiante) {   /**INSERTA UN ESTUDIANTE**/
+
+    /**INSERTA UN ESTUDIANTE | (2.A)**/
+    public EstudianteDTO save(Estudiante estudiante) {
         Estudiante estudianteGuardado = this.estudianteRepository.save(estudiante);
 
         //retorna un EstudianteDTO copiando los atributos del estudiante guardado

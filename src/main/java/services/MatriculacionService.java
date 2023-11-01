@@ -27,6 +27,7 @@ public class MatriculacionService {
     private EstudianteRepository estudianteRepository;
 
 
+    /**BUSCA CARRERAS CON INSCRIPTOS ORDENADO POR CANT. INSCRIPTOS  | (2.F)**/
     public List<CarreraDTO> findAllCarrerasWithInscriptos() {
         List<Carrera> resultado = this.matriculacionRepository.findAllCarrerasWithInscriptos();   //resultado de la query
         List<CarreraDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
@@ -40,6 +41,26 @@ public class MatriculacionService {
         return listaNueva;  //retorna la lista de DTOs
     }
 
+
+    /**BUSCA ESTUDIANTES EN UNA CARRERA ESPECIFICADA FILTRADO POR CIUDAD  | (2.G)**/
+    public List<EstudianteDTO> findAllEstudiantesInCarreraByCiudad(Long idCarrera, String ciudad) {
+        List<Estudiante> resultado = this.matriculacionRepository.findAllEstudiantesInCarreraByCiudad(ciudad, idCarrera);   //resultado de la query
+        List<EstudianteDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
+
+        for (Estudiante estudiante : resultado) {
+            EstudianteDTO estudianteDTO = new EstudianteDTO(estudiante.getDni(), estudiante.getNombres(),
+                    estudiante.getApellido(), estudiante.getEdad(), estudiante.getGenero(),
+                    estudiante.getCiudadResidencia(), estudiante.getNumeroLibreta());
+
+
+            listaNueva.add(estudianteDTO);
+        }
+
+        return listaNueva;  //retorna la lista de DTOs
+    }
+
+
+    /**GENERA REPORTE | (2.H)**/
     public ReporteDTO getReporte() {
         //obtenemos todos los años en donde hubieron graduaciones
         List<Integer> aniosDeGraduaciones = matriculacionRepository.getAniosDeGraduacionesAsc();

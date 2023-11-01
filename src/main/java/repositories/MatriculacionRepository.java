@@ -1,9 +1,11 @@
 package repositories;
 
+import models.Estudiante;
 import models.Matriculacion;
 import models.Carrera;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,6 +14,9 @@ import java.util.List;
 public interface MatriculacionRepository extends JpaRepository<Matriculacion, Integer> {
     @Query("SELECT c FROM Carrera c JOIN c.matriculaciones m GROUP BY c.id, c.nombre")
     List<Carrera> findAllCarrerasWithInscriptos();
+
+    @Query("SELECT e FROM Estudiante e WHERE e.ciudadResidencia = :ciudad AND e IN (SELECT m.estudiante FROM Matriculacion m WHERE m.carrera = :carrera)")
+    List<Estudiante> findAllEstudiantesInCarreraByCiudad(@Param("ciudad") String ciudad, @Param("carrera") Long id);
 
     @Query("SELECT DISTINCT m.anioInscripcion FROM Matriculacion m ORDER BY m.anioInscripcion ASC")
     List<Integer> getAniosDeInscripcionesAsc();
