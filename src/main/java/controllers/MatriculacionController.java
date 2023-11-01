@@ -3,6 +3,7 @@ package controllers;
 import DTOs.CarreraDTO;
 import DTOs.EstudianteDTO;
 import DTOs.MatriculacionDTO;
+import DTOs.ReporteDTO;
 import models.Matriculacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,6 @@ import java.util.List;
 public class MatriculacionController {
     @Autowired
     private MatriculacionService matriculacionService;
-
 
     @GetMapping("/carrerasConInscriptos")
     public List<CarreraDTO> getCarrerasConInscriptos() {
@@ -30,5 +30,10 @@ public class MatriculacionController {
     @PostMapping("")
     public MatriculacionDTO post(@RequestBody Matriculacion matriculacion) {
         return this.matriculacionService.save(matriculacion);
+    }
+
+    @GetMapping("/reporte")
+    public ReporteDTO getReporte(){
+        return matriculacionService.getReporte();
     }
 }
