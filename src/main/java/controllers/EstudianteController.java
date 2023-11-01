@@ -20,13 +20,13 @@ public class EstudianteController {
         return this.estudianteService.findAllByOrderByDniDesc();
     }
 
-    @GetMapping("/nroLibreta/{nroLibreta}")
-    public EstudianteDTO getBynumeroLibreta(@PathVariable String nroLibreta) {
+    @GetMapping("/getByLibreta/{nroLibreta}")
+    public EstudianteDTO getByNumeroLibreta(@PathVariable String nroLibreta) {
         return this.estudianteService.findByNumeroLibreta(nroLibreta);
     }
 
-    @GetMapping("/genero/{genero}")
-    public List<EstudianteDTO> getBygenero(@PathVariable String genero) {
+    @GetMapping("/getByGenero/{genero}")
+    public List<EstudianteDTO> getByGenero(@PathVariable String genero) {
         return this.estudianteService.findByGenero(genero);
     }
 
