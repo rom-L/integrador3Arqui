@@ -1,11 +1,9 @@
 package services;
 
-import DTOs.CarreraConInscriptosYEgresadosDTO;
-import DTOs.CarreraDTO;
-import DTOs.EstudianteDTO;
-import DTOs.ReporteDTO;
+import DTOs.*;
 import models.Carrera;
 import models.Estudiante;
+import models.Matriculacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repositories.CarreraRepository;
@@ -25,6 +23,17 @@ public class MatriculacionService {
 
     @Autowired
     private EstudianteRepository estudianteRepository;
+
+
+
+    /**INSERTA UNA MATRICULACION  | (2.A)**/
+    public MatriculacionDTO save(Matriculacion matriculacion) {
+        Matriculacion matriculacionGuardada = this.matriculacionRepository.save(matriculacion);
+
+        return new MatriculacionDTO(matriculacionGuardada.getId(), matriculacionGuardada.getEstudiante().getDni(),
+                matriculacionGuardada.getCarrera().getId(), matriculacionGuardada.getAnioInscripcion(),
+                matriculacionGuardada.getAnioGraduacion(), matriculacionGuardada.getAntiguedad());
+    }
 
 
     /**BUSCA CARRERAS CON INSCRIPTOS ORDENADO POR CANT. INSCRIPTOS  | (2.F)**/
