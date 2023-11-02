@@ -12,6 +12,7 @@ import application.repositories.MatriculacionRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service("MatriculacionService")
 public class MatriculacionService {
@@ -27,7 +28,15 @@ public class MatriculacionService {
 
 
     /**INSERTA UNA MATRICULACION  | (2.A)**/
-    public MatriculacionDTO save(Matriculacion matriculacion) {
+    public MatriculacionDTO save(Matriculacion matriculacion) throws Exception {
+
+        Optional<Estudiante> e = estudianteRepository.findById(matriculacion.getEstudiante().getDni());
+        Optional<Carrera> c = carreraRepository.findById(matriculacion.getCarrera().getId());
+
+        if (!e.isPresent() || !c.isPresent()){
+            throw new Exception("El estudiante o la carrera no existen en el sistema");
+        }
+
         Matriculacion matriculacionGuardada = this.matriculacionRepository.save(matriculacion);
 
         return new MatriculacionDTO(matriculacionGuardada.getId(), matriculacionGuardada.getEstudiante().getDni(),
@@ -42,7 +51,7 @@ public class MatriculacionService {
         List<CarreraDTO> listaNueva = new ArrayList<>(); //lista vacia para poner los DTOs
 
         for (Carrera carrera : resultado) {
-            CarreraDTO carreraDTO = new CarreraDTO(carrera.getId(), carrera.getNombre());
+            CarreraDTO carreraDTO = new CarreraDTO(carrera.getNombre());
 
             listaNueva.add(carreraDTO);
         }

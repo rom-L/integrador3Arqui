@@ -28,7 +28,7 @@ public class MatriculacionController {
     }
 
     @PostMapping("")
-    public MatriculacionDTO post(@RequestBody Matriculacion matriculacion) {
+    public MatriculacionDTO post(@RequestBody Matriculacion matriculacion) throws Exception {
         return this.matriculacionService.save(matriculacion);
     }
 

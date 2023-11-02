@@ -20,6 +20,6 @@ public class CarreraService {
         Carrera carreraGuardada = this.carreraRepository.save(carrera);
 
         //retorna un CarreraDTO copiando los atributos de la carrera guardada
-        return new CarreraDTO(carreraGuardada.getId(), carreraGuardada.getNombre());
+        return new CarreraDTO(carreraGuardada.getNombre());
     }
 }
