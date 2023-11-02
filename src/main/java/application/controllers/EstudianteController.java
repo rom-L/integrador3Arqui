@@ -1,14 +1,14 @@
-package controllers;
+package application.controllers;
 
-import DTOs.EstudianteDTO;
-import models.Estudiante;
+import application.DTOs.EstudianteDTO;
+import application.models.Estudiante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import services.EstudianteService;
+import application.services.EstudianteService;
 
 import java.util.List;
 
-@RestController
+@RestController("EstudianteController")
 @RequestMapping("/estudiantes")
 public class EstudianteController {
     @Autowired

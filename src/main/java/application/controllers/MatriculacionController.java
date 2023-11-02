@@ -1,17 +1,17 @@
-package controllers;
+package application.controllers;
 
-import DTOs.CarreraDTO;
-import DTOs.EstudianteDTO;
-import DTOs.MatriculacionDTO;
-import DTOs.ReporteDTO;
-import models.Matriculacion;
+import application.DTOs.CarreraDTO;
+import application.DTOs.EstudianteDTO;
+import application.DTOs.MatriculacionDTO;
+import application.DTOs.ReporteDTO;
+import application.models.Matriculacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import services.MatriculacionService;
+import application.services.MatriculacionService;
 
 import java.util.List;
 
-@RestController
+@RestController("MatriculacionController")
 @RequestMapping("/matriculaciones")
 public class MatriculacionController {
     @Autowired
