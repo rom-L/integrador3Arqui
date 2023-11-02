@@ -39,7 +39,7 @@ public class CargaDeDatos {
 
 
     public void cargarDatosEstudiante() throws IOException {
-        File archivoCSV = ResourceUtils.getFile("src/main/java/application/csv/estudiantes.csv");
+        File archivoCSV = ResourceUtils.getFile("integrador3Arqui/src/main/java/application/csv/estudiantes.csv");
 
         try (FileReader reader = new FileReader(archivoCSV);
              CSVParser csvParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader)) {
@@ -62,7 +62,7 @@ public class CargaDeDatos {
     }
 
     public void cargarDatosCarrera() throws IOException {
-        File archivoCSV = ResourceUtils.getFile("src/main/java/application/csv/carreras.csv");
+        File archivoCSV = ResourceUtils.getFile("integrador3Arqui/src/main/java/application/csv/carreras.csv");
 
         try (FileReader reader = new FileReader(archivoCSV);
              CSVParser csvParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader)) {
@@ -79,7 +79,7 @@ public class CargaDeDatos {
     }
 
     public void cargarDatosMatriculacion() throws IOException, Exception {
-        File archivoCSV = ResourceUtils.getFile("src/main/java/application/csv/matriculaciones.csv");
+        File archivoCSV = ResourceUtils.getFile("integrador3Arqui/src/main/java/application/csv/matriculaciones.csv");
 
         try (FileReader reader = new FileReader(archivoCSV);
              CSVParser csvParser = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(reader)) {
