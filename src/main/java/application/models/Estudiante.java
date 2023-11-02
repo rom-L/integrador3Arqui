@@ -25,7 +25,7 @@ public class Estudiante implements Serializable {
     private String apellido;
 
     @Column(name = "edad")
-    private int edad;
+    private Integer edad;
 
     @Column(name = "genero")
     private String genero;
