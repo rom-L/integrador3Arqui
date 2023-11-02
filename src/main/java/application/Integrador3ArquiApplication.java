@@ -10,17 +10,17 @@ import java.io.IOException;
 
 @SpringBootApplication
 public class Integrador3ArquiApplication {
-
     @Autowired
     private CargaDeDatos cargaDeDatos;
+
 
     public static void main(String[] args) {
         SpringApplication.run(Integrador3ArquiApplication.class, args);
     }
 
     @PostConstruct
-    public void init() throws IOException {
-        cargaDeDatos.cargarDatosDesdeCSV();
+    public void init() throws IOException, Exception {
+        cargaDeDatos.cargarDatos();
     }
 
 }
