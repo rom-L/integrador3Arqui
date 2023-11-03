@@ -39,41 +39,48 @@
     "antiguedad": "3"
 }`
 
-![2 b](https://drive.google.com/file/d/14TUIoNofka1xlMZ95Aag6UKgDgrBQDf_/view?usp=sharing)
+
+![Meet - ybi-duqe-eds — Mozilla Firefox 11_2_2023 9_17_04 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/7d9693e0-0da3-40a1-887f-e5ce523aed75)
 
 ---
 ### **C) Recupera estudiantes ordenado por DNI Desc**:
 **_Endpoint:_** GET`localhost:8080/estudiantes/OrderByDNI`
 
-![2 c](https://drive.google.com/file/d/1hCZ-8BRRCu9niwQrmKu2ldR8k6FAgbYO/view?usp=sharing)
+![Meet - ybi-duqe-eds — Mozilla Firefox 11_2_2023 9_17_47 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/6f443936-92e8-48e1-b7b1-46416092b067)
+
 
 ---
 ### **D) Recupera un estudiante by numero libreta**:
 **_Endpoint:_** GET`localhost:8080/estudiantes/getByLibreta/{nroLibreta}`
 
-![2 d](https://drive.google.com/file/d/1DUJrnDD5JgXh_fsmoAaInmoFsCHakSGJ/view?usp=sharing)
+![Meet - ybi-duqe-eds — Mozilla Firefox 11_2_2023 9_19_28 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/8f0123dd-f04f-4093-a071-c1ee5b0e68ba)
+
 
 ---
 ### **E) Recupera estudiantes by genero**:
 **_Endpoint:_** GET`localhost:8080/estudiantes/getByGenero/{genero}`
 
-![2 e](https://drive.google.com/file/d/1OEQZa6jF3h_V3swI-Out8ccePCE8jX5I/view?usp=sharing)
+![Screenshot 11_2_2023 9_20_10 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/40848709-d76d-4ab4-9cd4-0988f6fe2920)
+
 
 ---
 ### **F) Recupera carreras con estudiantes inscriptos ordenado por cant. inscriptos**:
 **_Endpoint:_** GET`localhost:8080/matriculaciones/carrerasConInscriptos`
 
-![2 f](https://drive.google.com/file/d/1r4PBFJ7fl-qrnMFi3ADSX8zzeBENWFzs/view?usp=sharing)
+![Meet - ybi-duqe-eds — Mozilla Firefox 11_2_2023 9_21_30 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/8119fd3f-01e6-4a80-b52f-16ab2f17967d)
+
 
 ---
 ### **G) Recupera estudiantes de una carrera especificada filtrado por ciudad de residencia**:
 **_Endpoint:_** GET`localhost:8080/matriculaciones/getEstudiantesByCarrera/{idCarrera}/filterByCiudad/{ciudad}`
 
-![2 g](https://drive.google.com/file/d/1m70usyWxe3qaro5rOSTht8TuH4xprs1Q/view?usp=sharing)
+![localhost _ 127 0 0 1 _ integrador3 _ matriculaciones _ phpMyAdmin 5 2 1 — Mozilla Firefox 11_2_2023 9_29_05 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/72ac0afb-2819-441a-8771-a335a58de151)
+
 
 ---
 ### **H) Genera reporte**:
 **_Endpoint:_** GET`localhost:8080/matriculaciones/reporte`
-![2 h](https://drive.google.com/file/d/1QujLU5UXNzE-iS5J2-l-pxBw9QYeFg3H/view?usp=sharing)
+![integrador3Arqui – MatriculacionRepository java 11_2_2023 9_48_25 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/ff7b8016-0046-4247-ae65-04f288ef8c5a)
+
 
 ---
