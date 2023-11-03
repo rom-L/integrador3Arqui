@@ -15,8 +15,8 @@ public interface MatriculacionRepository extends JpaRepository<Matriculacion, Lo
     @Query("SELECT c FROM Carrera c JOIN c.matriculaciones m GROUP BY c.id, c.nombre")
     List<Carrera> findAllCarrerasWithInscriptos();
 
-    @Query("SELECT e FROM Estudiante e WHERE e.ciudadResidencia = :ciudad AND e IN (SELECT m.estudiante FROM Matriculacion m WHERE m.carrera = :carrera)")
-    List<Estudiante> findAllEstudiantesInCarreraByCiudad(@Param("ciudad") String ciudad, @Param("carrera") Long id);
+    @Query("SELECT e FROM Estudiante e WHERE e.ciudadResidencia = :ciudad AND e IN (SELECT m.estudiante FROM Matriculacion m WHERE m.carrera.id = :id)")
+    List<Estudiante> findAllEstudiantesInCarreraByCiudad(@Param("ciudad") String ciudad, @Param("id") Long id);
 
     @Query("SELECT DISTINCT m.anioInscripcion FROM Matriculacion m ORDER BY m.anioInscripcion ASC")
     List<Integer> getAniosDeInscripcionesAsc();

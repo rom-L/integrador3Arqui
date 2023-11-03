@@ -98,7 +98,9 @@ public class MatriculacionService {
                 for (Estudiante e : estudianteRepository.findAllGraduatedByCarreraAndYear(c, anio)) {
                     estudianteGraduadosDTOs.add(new EstudianteDTO(e.getDni(), e.getNombres(), e.getApellido(), e.getEdad(), e.getGenero(), e.getCiudadResidencia(), e.getNumeroLibreta()));
                 }
-                carreraConInscriptosYEgresadosDTO.agregarGraduadosEnAnio(estudianteGraduadosDTOs, anio);
+                if (!estudianteGraduadosDTOs.isEmpty()){
+                    carreraConInscriptosYEgresadosDTO.agregarGraduadosEnAnio(estudianteGraduadosDTOs, anio);
+                }
             }
             //por cada año se obtienen los estudiantes que se inscribieron en la carrera 'x'
             for (Integer anio : aniosDeInscripciones) {
@@ -106,7 +108,9 @@ public class MatriculacionService {
                 for (Estudiante e : estudianteRepository.findAllInscribedByCarreraAndYear(c, anio)) {
                     estudianteInscriptosDTOs.add(new EstudianteDTO(e.getDni(), e.getNombres(), e.getApellido(), e.getEdad(), e.getGenero(), e.getCiudadResidencia(), e.getNumeroLibreta()));
                 }
-                carreraConInscriptosYEgresadosDTO.agregarInscriptosEnAnio(estudianteInscriptosDTOs, anio);
+                if (!estudianteInscriptosDTOs.isEmpty()){
+                    carreraConInscriptosYEgresadosDTO.agregarInscriptosEnAnio(estudianteInscriptosDTOs, anio);
+                }
             }
             //agregamos la carrera al reporte
             reporte.agregarCarrerasConInscriptosEnAnio(carreraConInscriptosYEgresadosDTO);

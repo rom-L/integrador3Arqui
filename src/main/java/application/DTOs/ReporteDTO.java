@@ -1,8 +1,11 @@
 package application.DTOs;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class ReporteDTO {
     private List<CarreraConInscriptosYEgresadosDTO> carreras;
 

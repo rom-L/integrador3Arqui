@@ -1,11 +1,12 @@
 package application.DTOs;
 
+import lombok.Data;
 import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.List;
 
-@Getter
+@Data
 public class CarreraConInscriptosYEgresadosDTO {
     private String nombre;
     private HashMap<Integer, List<EstudianteDTO>> estudiantesInscriptosPorAnio;

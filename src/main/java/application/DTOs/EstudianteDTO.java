@@ -1,8 +1,9 @@
 package application.DTOs;
 
+import lombok.Data;
 import lombok.Getter;
 
-@Getter
+@Data
 public class EstudianteDTO {
     private Long dni;
     private String nombres;
