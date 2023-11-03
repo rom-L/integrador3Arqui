@@ -19,7 +19,7 @@
     "numeroLibreta": "A123456"
 }`
 
-![2 a](https://drive.google.com/file/d/1IpugG7lr14BYmmosaXWJd73fnaxHhA6B/view?usp=sharing)
+![localhost_8080_estudiantes - My Workspace 11_2_2023 9_16_00 PM](https://github.com/Skpone/integrador3Arqui/assets/72869504/79926866-e72c-49aa-90be-5118a7b58e3b)
 
 ---
 ### **B) Matricular estudiante a una carrera**:
